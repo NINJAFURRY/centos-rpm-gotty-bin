@@ -1,4 +1,5 @@
 %define _name gotty
+%undefine _missing_build_ids_terminate_build
 
 Name:		%{_name}-bin
 Version:	1.0.1
@@ -14,8 +15,7 @@ Source0:	https://github.com/yudai/gotty/releases/download/v%{version}/gotty_linu
 GoTTY is a simple command line tool that turns your CLI tools into web applications.
 
 %prep
-install -d %{_name}-%{version}/
-install %SOURCE0 %{_name}-%{version}/%{_name}
+%setup -q -c %{name}-%{version}
 
 %build
 
